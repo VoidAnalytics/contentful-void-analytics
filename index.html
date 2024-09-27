@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Void Analytics Extension</title>
+  <script>
+    window.contentfulExtension.init(function (extension) {
+      // Inject Void Analytics Script
+      var script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.setAttribute('void-analytics-tag', true);
+      script.src = 'https://cdn.voidanalytics.com/latest.min.js';
+      script.async = true;
+      document.head.appendChild(script);
+      
+      // Automatically resize the iframe containing the extension
+      extension.window.startAutoResizer();
+    });
+  </script>
+</head>
+<body>
+  <div id="void-analytics-extension">
+    <!-- You can display any message or leave it blank -->
+    <h1>Void Analytics Script Loaded</h1>
+  </div>
+</body>
+</html>
